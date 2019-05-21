@@ -141,6 +141,7 @@ html,
         @include app-gradient;
         padding-top: 10px;
         padding-bottom: 10px;
+        @include box-shadow(0px, 0px, 5px, 0px, #a7a7a7);
     }
 }
 
@@ -235,7 +236,7 @@ body.hasBMB {
 
 // SITE WRAPPER
 .wrapper {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 // APP TEST SERIES
 #app-test-series {
@@ -337,19 +338,21 @@ body.hasBMB {
 
 // BACKBAR
 .backBar {
-    padding: 14px 0 13px;
-    .BB_inner {
+    .BB_top {
+        padding: 16px 0 14px;
+    }
+    .BBT_inner {
         > .LT {
             width: calc(100% - 40px);
             p {
                 color: #fff;
-                font: 18px "nexa-bold";
+                font: 17px "nexa-bold";
                 text-shadow: 0px 1px 1px #a2a2a2;
                 i {
                     border-radius: 100%;
                 }
                 span {
-                    margin-left: 5px;
+                    margin-left: 10px;
                     position: relative;
                     top: 2px;
                 }
@@ -357,6 +360,194 @@ body.hasBMB {
         }
         > .RT {
             width: 40px;
+        }
+    }
+    .BBB_inner {
+        .text {
+            color: #fff;
+            font: 25px "nexa-x-bold";
+            text-shadow: 0px 1px 1px #a2a2a2;
+        }
+        img {
+            line-height: 0;
+            margin-bottom: -6px;
+            width: 200px;
+            margin-top: 8px;
+        }
+    }
+    .BB_top {
+        &.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 12;
+            @include box-shadow(0px, 0px, 5px, 0px, #a7a7a7);
+        }
+    }
+}
+
+// APP NOTIFICATIONS
+.app-notifications {
+    margin-bottom: 20px;
+}
+.AN_main {
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .ANM_inner {
+        background-color: #fff;
+        @include box-shadow(0px, 0px, 3px, 0px, #d6d6d6);
+        padding: 15px 0 12px 35px;
+        color: #777;
+        > .LT {
+            width: calc(100% - 30px);
+            padding-right: 10px;
+            .left-icon {
+                top: 50%;
+                left: 3px;
+                @include transformy(-50%);
+                font-size: 28px;
+            }
+            .head {
+                font: 16px "nexa-bold";
+                color: #000;
+                span {
+                    font: 12px "nexa-regular";
+                    color: $secodary-color;
+                    margin-top: 3px;
+                }
+            }
+        }
+        > .RT {
+            width: 30px;
+            i {
+                font-size: 22px;
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+// VIDEO LESSONS
+.video-lessons {
+    .big-vide-sec {
+        margin: -10px -10px 15px;
+        background-color: #000;
+        padding: 5px;
+    }
+    .all-videos {
+        padding: 0 5px 10px;
+    }
+    .A-video {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+    .AV_inner {
+        background-color: #fff;
+        @include box-shadow(0px, 0px, 3px, 0px, #d6d6d6);
+        > .LT {
+            width: 110px;
+            line-height: 0;
+            .icon {
+                top: 50%;
+                left: 50%;
+                @include transform(-50%, -50%);
+                img {
+                    width: 35px;                    
+                }
+            }
+        }
+        > .RT {
+            width: calc(100% - 110px);
+            padding: 10px 0 0 15px;
+            .head {
+                font: 16px "nexa-x-bold";
+                > span {
+                    font: 13px "nexa-regular";
+                    color: $secodary-color;
+                    margin-top: 4px;
+                    i {
+                        font-size: 12px;
+                        margin-right: 5px;
+                        position: relative;
+                        top: -2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// CONTACT SEC
+.app-contact {
+    background-color: #fff;
+    padding: 20px 0;
+    @include box-shadow(0px, 0px, 5px, 0px, #d6d6d6);
+    .AC_inner {
+        padding: 0 10px;
+        > p {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+            font: 15px "nexa-book";
+            color: #444444;
+            > i {
+                font-size: 17px;
+                margin-right: 6px;
+                margin-top: 1px;
+                color: #333;
+            }
+        }
+    }
+}
+
+// CONTACT FORM SEC
+.app-contact-form {
+    margin: 30px 0;
+    .ACP_inner {
+        padding: 0 10px;
+    }
+    .form {
+        input,
+        textarea {
+            font: 14px "nexa-bold";
+            color: #666;
+        }
+        input {
+            height: 40px;
+        }
+        input,
+        textarea {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            &:focus {
+                border-bottom-color: #636363 !important;
+                @include box-shadow(0, 1px, 0, 0, #636363 !important);
+                & + label {
+                    color: #444 !important;
+                }
+            }
+        }
+        .app-round-btn {
+            min-width: auto;
+            padding: 9px 3px 0;
+            height: 60px;
+            width: 60px;
+            margin: 10px 0 0;
+            i {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                font-size: 26px;
+                position: relative;
+                top: -2px;
+                left: 1px;
+            }
         }
     }
 }

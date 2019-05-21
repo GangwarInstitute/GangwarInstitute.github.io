@@ -86,12 +86,19 @@
         // HOMEPAGE
         (function () {
             var app_headHeight = $('header').innerHeight();
-            // var app_mainmenuHeight = $('#main-menu').innerHeight();
-            // if ($(this).scrollTop() > app_headHeight + app_mainmenuHeight) {
+            var app_bbHeight = $('.backBar').innerHeight();
+            // HEADER FIXED
             if ($(this).scrollTop() > app_headHeight) {
                 $('.app-head-top').addClass('fixed');
             } else {
                 $('.app-head-top').removeClass('fixed');
+            }
+
+            // BACKBTN FIXED
+            if ($(this).scrollTop() > app_bbHeight) {
+                $('.backBar >.BB_top').addClass('fixed');
+            } else {
+                $('.backBar>.BB_top').removeClass('fixed');
             }
         })();
     });
